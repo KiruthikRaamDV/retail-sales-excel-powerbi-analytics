@@ -18,7 +18,7 @@
 
 ---
 
-## 👋 About this project
+##  About this project
 
 This project started when I decided to improve my practical data analytics skills. Although I'd studied Data Science, I wanted to get more comfortable with tools that businesses use to understand performance and make decisions.
 
@@ -32,7 +32,7 @@ So this repository tells **one connected story**: how I went from learning the b
 
 > **A note about the data:** Both datasets are synthetic and were used for learning. The analysis describes a simulated business; it is not a claim about a real retailer or real customer behavior.
 
-## 🧭 The journey
+## The journey
 
 | Stage | What I worked on | Why it mattered |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ So this repository tells **one connected story**: how I went from learning the b
 | **4. Power BI + DAX** | Date model, reusable measures, monthly growth, rankings | Ask questions that simple totals can't answer |
 | **5. Business storytelling** | Four report pages, product drill-through, written findings | Help someone move from an overview to the detail behind it |
 
-## 📗 Part 1 — Where I started: my first Excel dashboard
+##  Part 1 — Where I started: my first Excel dashboard
 
 My first workbook contained **12 orders** for products including laptops, monitors, keyboards, mice, and headphones.
 
@@ -60,7 +60,7 @@ One small but useful lesson came from the dashboard filters. The workbook was sa
 
 The first project was simple, but it gave me enough confidence to try a larger dataset.
 
-## 📊 Part 2 — Taking Excel further with 500 transactions
+##  Part 2 — Taking Excel further with 500 transactions
 
 The next dataset contained **500 unique orders from January to September 2026**, with fields for dates, products, categories, quantities, unit prices, revenue, regions, and sales channels.
 
@@ -81,7 +81,7 @@ This time I wanted to think more like someone preparing a report for a manager: 
 
 **Important filter detail:** The 500-order Excel dashboard was saved with **In-store** selected. Its displayed **£77,860.35 and 263 orders** are correct for that filter, but are *not* the full-dataset totals above. I clear or label filters when presenting the overall business performance.
 
-## ⚡ Part 3 — Why I moved to Power BI
+## Part 3 — Why I moved to Power BI
 
 By this point, I had already built a working Excel dashboard. I didn't want to repeat exactly the same work in another tool; I wanted to take the analysis further.
 
@@ -117,7 +117,7 @@ The drill-through feature was especially useful to learn. Rather than stopping a
 
 ---
 
-## 💬 Business questions I wanted to answer
+##  Business questions I wanted to answer
 
 Building the visuals was one part of the project. The more interesting part was trying to work out what the numbers were telling me — and what they *weren't* telling me.
 
@@ -208,7 +208,7 @@ These are **questions and hypotheses**, not proven commercial interventions. I t
 
 ---
 
-## 🧠 What I learned
+##  What I learned
 
 Looking back, the biggest difference between my first Excel dashboard and the Power BI report isn't just that the report has more charts.
 
@@ -222,7 +222,7 @@ I also learned to think about data quality before presentation, use DAX measures
 
 Most importantly, **finding a pattern and explaining why it happened are two different things**. A dashboard is a good starting point for decision-making, but sometimes the most useful outcome is identifying what additional data is needed.
 
-## ⚠️ Limitations
+## Limitations
 
 This is a **learning project using synthetic transactions**, not actual business data.
 
@@ -230,7 +230,7 @@ The 500-order dataset covers only nine months and doesn't include customer ident
 
 I have tried to be clear about what the available data supports and where further investigation would be needed.
 
-## 📁 Project files and how to explore them
+##  Project files and how to explore them
 
 This repository is intended to bring the complete learning journey together:
 
@@ -261,7 +261,7 @@ When the files are available:
 4. Clear any saved slicer selections to compare the **unfiltered** totals with the figures above.
 5. Use the **Product Details** drill-through page to explore selected products.
 
-## 🎯 Final thoughts
+## Final thoughts
 
 I started this project with **12 orders and a basic spreadsheet**. I ended up working with **500 transactions**, a more detailed Excel dashboard, and a **four-page Power BI report**.
 
