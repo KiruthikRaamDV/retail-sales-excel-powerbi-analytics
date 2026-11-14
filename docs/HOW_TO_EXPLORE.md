@@ -1,46 +1,46 @@
-# Opening the Excel and Power BI project
+# How to explore the project
 
-## What the files represent
+This is an Excel-to-Power-BI learning project built with synthetic retail data.
 
-- `excel/Retail_Sales_Analysis_.xlsx` — the **first Excel exercise**, based on 12 transactions and a basic dashboard.
-- `excel/Retail_Sales_Analytics_500_Transactions.xlsx` — the expanded **500-transaction Excel project**, including PivotTables, analysis sheets and an interactive dashboard.
-- `powerbi/Retail_Sales_Analytics_500.pbix` — Power BI Desktop report based on the 500-transaction workbook.
-- `screenshots/` — static images of the dashboards and report pages.
+## Download the files
 
-> These binary project files are added separately from the README and documentation. If the links are missing, they have **not yet been uploaded to GitHub**.
+- [500-transaction Excel workbook](../excel/Retail_Sales_Analytics_500_Transactions.xlsx)
+- [Completed Power BI report](../powerbi/Retail%20Sales%20Analytics%20500.pbix)
+- [Dashboard screenshots](../screenshots/)
+
+The story began with a separate 12-transaction Excel exercise. The original small workbook is not yet in this repository; the complete 500-transaction workbook and Power BI report are available above.
 
 ## Excel walkthrough
 
-1. Open the 12-order workbook in Microsoft Excel.
-2. Start at `RetailSales` to see the underlying data, then explore the PivotTables and `Dashboard`.
-3. Open the 500-order workbook.
-4. Start with `Sales Data`, then look at `Monthly Analysis`, `Regional Analysis`, `Channel Analysis`, and `Dashboard`.
-5. Clear the channel/category selections if you want to compare against **overall** totals.
-
-**Saved state:** The 12-order dashboard shows an Electronics filter; the 500-order dashboard shows an In-store filter. Filtered numbers will be lower than overall revenue.
+1. Open the 500-transaction workbook in Microsoft Excel.
+2. Start with `Sales Data` and inspect the raw fields.
+3. Explore the monthly, regional and channel analysis worksheets, the KPI PivotTables and the dashboard.
+4. Test the Channel slicer. The saved dashboard shows the **In-store** filter, so it displays £77,860.35 and 263 orders.
+5. Clear the slicer to compare the **overall** revenue and order count with the figures below.
 
 ## Power BI walkthrough
 
-1. Install and open **Power BI Desktop**.
-2. Open the `.pbix` file.
-3. If the query shows an error because the original workbook path belongs to another computer, open **Transform data → Data source settings** and update it to the downloaded 500-transaction workbook.
-4. Select **Close & Apply**, then **Refresh**.
-5. Explore **Executive Overview**, **Product Analysis**, **Sales Drivers**, and **Product Details**.
-6. Use Region, Channel and Category slicers to see the KPIs change.
-7. Right-click a product on a relevant product chart and choose **Drill through → Product Details**.
+1. Open the `.pbix` file in Power BI Desktop.
+2. If the source workbook path no longer exists on your computer, open **Transform data → Data source settings** and point the query to the downloaded Excel workbook.
+3. Select **Close & Apply** and refresh the data.
+4. Explore **Executive Overview**, **Product Analysis**, **Sales Drivers** and **Product Details**.
+5. Try the Region, Channel and Category slicers and see how the measures respond.
+6. Right-click a product bar and use **Drill through → Product Details** where available.
 
-## Expected totals, with all filters cleared
+## Expected totals without filters
 
-| Measure | Expected |
+| Measure | Result |
 | --- | ---: |
-| Revenue | £160,935.05 |
+| Total revenue | £160,935.05 |
 | Unique orders | 500 |
 | Average order value | £321.87 |
 | Online revenue | £83,074.70 |
 | In-store revenue | £77,860.35 |
 
-If your numbers differ, check that you are using the same 500-order dataset and that no slicers or report-level filters are still applied.
+If you see different numbers, first check for slicer selections and report-level filters.
 
-## Reproducibility note
+## A note about reproducibility
 
-The project uses a practice dataset, not a live database. It does not need online services or API keys to reproduce the Excel and Power BI reporting. The published `.pbix` may still require updating the local Excel source path.
+The datasets are synthetic, and the report does not require a live data service or API key. Depending on where you save the files, Power BI may need the local workbook path updated before you can refresh it.
+
+[Back to the project case study](../README.md)
