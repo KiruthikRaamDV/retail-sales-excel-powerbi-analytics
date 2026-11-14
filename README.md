@@ -13,6 +13,9 @@
 **Data:** Two synthetic retail datasets (12 transactions, then 500 transactions)  
 **Main reporting period:** January–September 2026
 
+
+**Explore the documentation:** [Business questions & recommendations](docs/BUSINESS_QUESTIONS.md) · [DAX measures & data model](docs/DAX_MEASURES.md) · [How to open the dashboards](docs/HOW_TO_EXPLORE.md)
+
 ---
 
 ## 👋 About this project
