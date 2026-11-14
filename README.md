@@ -1,274 +1,158 @@
-# Retail Sales Analytics | From Excel to Power BI
+# Retail Sales Analytics — From Excel to Power BI
 
-### From my first 12-row Excel dashboard to a four-page Business Intelligence report
+**A personal project about learning to work with data, build useful reports, and ask better business questions.**
 
-![Excel](https://img.shields.io/badge/Excel-PivotTables%20%26%20Dashboards-217346?style=flat-square&logo=microsoftexcel&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-DAX%20%26%20Data%20Modeling-F2C811?style=flat-square&logo=powerbi&logoColor=black)
-![Power Query](https://img.shields.io/badge/Power_Query-Data%20Cleaning-0F766E?style=flat-square)
-![Dataset](https://img.shields.io/badge/Data-500%20Synthetic%20Transactions-2563EB?style=flat-square)
+**Project status:** Completed  
+**Tools:** Excel, PivotTables, PivotCharts, Power Query, Power BI, DAX  
+**Main dataset:** 500 synthetic retail transactions, January–September 2026
 
-> **The idea:** I wanted to learn how to go beyond creating charts and start using sales data to answer questions a business might actually ask.
-
-**Tools:** Microsoft Excel · PivotTables · PivotCharts · Power Query · Power BI · DAX · Data Modeling  
-**Data:** Two synthetic retail datasets (12 transactions, then 500 transactions)  
-**Main reporting period:** January–September 2026
-
-
-**Explore the documentation:** [Business questions & recommendations](docs/BUSINESS_QUESTIONS.md) · [DAX measures & data model](docs/DAX_MEASURES.md) · [How to open the dashboards](docs/HOW_TO_EXPLORE.md)
+[Explore the Excel workbook](excel/Retail_Sales_Analytics_500_Transactions.xlsx) · [Open the Power BI report](powerbi/Retail%20Sales%20Analytics%20500.pbix) · [Browse screenshots](screenshots/) · [Read the business analysis](docs/BUSINESS_QUESTIONS.md)
 
 ---
 
-##  About this project
+## How it started
 
-This project started when I decided to improve my practical data analytics skills. Although I'd studied Data Science, I wanted to get more comfortable with tools that businesses use to understand performance and make decisions.
+I wanted to get more comfortable using the tools that businesses rely on to understand their data. Rather than jump straight into a large Power BI report, I started with a small Excel exercise.
 
-I didn't start with a complex dashboard. I began with **just 12 retail transactions in Excel**. I learned how to calculate revenue, summarize sales with PivotTables, build charts, and create my first interactive dashboard.
+My first dataset had just **12 sales transactions**. I practiced calculating revenue, creating PivotTables and charts, and bringing the results into a simple interactive dashboard. It wasn't complicated, but it helped me understand how to organize data and how filters change what a dashboard shows.
 
-Once I understood those basics, I challenged myself with **500 transactions** across nine months, four regions, two sales channels, and ten products. That gave me more interesting questions to explore.
+Once I was comfortable with that, I worked on a larger dataset with **500 orders** across nine months, four regions, two sales channels, and ten products. This time, I wanted to answer questions a manager might actually ask: Which channel brings in more revenue? Which products matter most? How do sales change from month to month?
 
-Finally, I moved the same 500-transaction analysis into **Power BI**. I used Power Query to prepare and validate the data, built a Date table, wrote DAX measures, and created an interactive four-page report with product drill-through.
+Excel was a good place to explore those questions. Power BI was the next step because I wanted reusable calculations, a proper data model, and the ability to drill into the detail behind a chart.
 
-So this repository tells **one connected story**: how I went from learning the basics in Excel to building a more complete Business Intelligence reporting solution.
+The result is one connected project: **Excel foundations → larger Excel dashboard → Power Query and DAX → a four-page Power BI report**.
 
-> **A note about the data:** Both datasets are synthetic and were used for learning. The analysis describes a simulated business; it is not a claim about a real retailer or real customer behavior.
+## A look at the dashboards
 
-## The journey
-
-| Stage | What I worked on | Why it mattered |
-| --- | --- | --- |
-| **1. Excel foundations** | 12 transactions, revenue calculations, PivotTables, first dashboard | Understand the basic numbers before worrying about design |
-| **2. Excel at a larger scale** | 500 transactions, KPIs, monthly/region/channel analysis, slicers | Compare performance across different parts of a business |
-| **3. Power Query** | Data types, missing values, clean text, revenue validation | Check whether the numbers behind the dashboard are reliable |
-| **4. Power BI + DAX** | Date model, reusable measures, monthly growth, rankings | Ask questions that simple totals can't answer |
-| **5. Business storytelling** | Four report pages, product drill-through, written findings | Help someone move from an overview to the detail behind it |
-
-##  Part 1 — Where I started: my first Excel dashboard
-
-My first workbook contained **12 orders** for products including laptops, monitors, keyboards, mice, and headphones.
-
-At that point I was learning what Excel could do beyond storing rows and columns. I organized the transaction data, calculated revenue, built PivotTables, and used PivotCharts and filtered KPIs to make the results easier to explore.
-
-| First Excel dataset | Result |
-| --- | ---: |
-| Transactions | **12** |
-| Total revenue (all categories) | **£5,315.00** |
-| Average revenue per order | **£442.92** |
-| Laptop revenue | **£3,000.00** |
-| Electronics revenue | **£3,900.00** |
-
-One small but useful lesson came from the dashboard filters. The workbook was saved with **Electronics selected**, so the visible KPI showed **£3,900 and five transactions**, not the full £5,315. It helped me understand that a dashboard number only makes sense when you know **what has been filtered**.
-
-The first project was simple, but it gave me enough confidence to try a larger dataset.
-
-##  Part 2 — Taking Excel further with 500 transactions
-
-The next dataset contained **500 unique orders from January to September 2026**, with fields for dates, products, categories, quantities, unit prices, revenue, regions, and sales channels.
-
-I built PivotTables for **monthly performance, regional performance, sales channels, and KPIs**, then brought them into a second interactive Excel dashboard.
-
-This time I wanted to think more like someone preparing a report for a manager: *Are we selling more? Where does revenue come from? Does the busiest channel bring in the most money?*
-
-### Overall sales performance
-
-| KPI | Full-dataset result |
-| --- | ---: |
-| **Total revenue** | **£160,935.05** |
-| **Unique orders** | **500** |
-| **Average order value** | **£321.87** |
-| Total units sold | 1,036 |
-| Average units per order | 2.07 |
-| Period | Jan–Sep 2026 |
-
-**Important filter detail:** The 500-order Excel dashboard was saved with **In-store** selected. Its displayed **£77,860.35 and 263 orders** are correct for that filter, but are *not* the full-dataset totals above. I clear or label filters when presenting the overall business performance.
-
-## Part 3 — Why I moved to Power BI
-
-By this point, I had already built a working Excel dashboard. I didn't want to repeat exactly the same work in another tool; I wanted to take the analysis further.
-
-I imported the 500 transactions into **Power BI Desktop** and used **Power Query** to check column types, review missing values, clean text, and create a calculated revenue check using **Units × Unit Price**.
-
-The checks confirmed **500 distinct Order IDs, no blank fields, and no revenue mismatches** in the uploaded dataset.
-
-Next, I created a **Date table** and linked it to the sales data. That made it possible to calculate revenue changes between months and keep time-based analysis consistent across visuals.
-
-### DAX measures I built
-
-| Measure | What it helps answer |
+| Excel sales dashboard | Power BI report |
 | --- | --- |
-| **Total Revenue** | How much did we sell? |
-| **Total Orders** | How many unique orders were placed? |
-| **Average Order Value** | How much is an order worth on average? |
-| **Previous Month Revenue** | What did the previous month generate? |
-| **Revenue MoM Change / Growth %** | Is revenue increasing or decreasing month to month? |
-| **Revenue Contribution %** | How much does each channel contribute? |
-| **Average Units Per Order** | Are people buying more items per transaction? |
-| **Product Revenue Rank** | Which products are top revenue contributors within the selected filters? |
+| ![Excel dashboard screenshot](screenshots/Screenshot%202026-11-13%20102423.png) | ![Power BI report screenshot](screenshots/Screenshot%202026-11-14%20155100.png) |
 
-### The four Power BI report pages
+[View all project screenshots](screenshots/)
 
-| Report page | What someone can explore |
+*Screenshots may show selected filters. The figures below refer to the complete 500-transaction dataset unless stated otherwise.*
+
+## The business in numbers
+
+| Metric | Result |
+| --- | ---: |
+| Total revenue | **£160,935.05** |
+| Unique orders | **500** |
+| Average order value | **£321.87** |
+| Units sold | 1,036 |
+| Reporting period | Jan–Sep 2026 |
+
+The dataset is **synthetic**, created for analysis practice. These are not real retailer results.
+
+## What I built
+
+### 1. Excel — getting comfortable with the data
+
+I started with the 12-order exercise, then developed a more detailed workbook using the 500 transactions.
+
+In Excel, I worked with revenue calculations, PivotTables, PivotCharts, and interactive slicers. I built summaries for monthly revenue, regional sales, Online versus In-store performance, and key metrics such as order count and average order value.
+
+That gave me an initial dashboard and a better idea of which questions I wanted to explore further.
+
+### 2. Power Query — checking the data before reporting
+
+I brought the 500-transaction workbook into Power BI and used Power Query to review data types, clean text fields, check for missing values, and validate revenue against **Units × Unit Price**.
+
+The checks found **500 distinct Order IDs**, no missing values, and no revenue mismatches.
+
+This stage reminded me that a polished dashboard only helps if the numbers behind it can be trusted.
+
+### 3. Power BI and DAX — taking the analysis further
+
+I created a Date table, linked it to the sales data, and wrote DAX measures for total revenue, total orders, average order value, previous-month revenue, month-over-month growth, channel revenue contribution, average units per order, and product rankings.
+
+I also learned how to make the report interactive with slicers and a drill-through page.
+
+The Power BI report has four pages:
+
+| Page | What it shows |
 | --- | --- |
-| **Executive Overview** | Main KPIs, revenue trend, channel performance, filters |
-| **Product Analysis** | Categories, Top 5 products, product ranks, performance table |
-| **Sales Drivers** | Monthly growth, regional revenue, channel contribution, units per order |
-| **Product Details** | Product-level drill-through, KPIs, monthly trend, region comparison |
+| **Executive Overview** | Main KPIs, revenue trends, channel performance and filters |
+| **Product Analysis** | Category comparisons, top products and dynamic rankings |
+| **Sales Drivers** | Monthly growth, regional results and basket-size comparisons |
+| **Product Details** | Product-specific performance using drill-through |
 
-The drill-through feature was especially useful to learn. Rather than stopping at a product bar on a chart, I could open a dedicated page and investigate that product in more detail.
+[See the DAX measures and model notes](docs/DAX_MEASURES.md)
 
----
+## The questions that made the project interesting
 
-##  Business questions I wanted to answer
+### Does the channel with more orders make more revenue?
 
-Building the visuals was one part of the project. The more interesting part was trying to work out what the numbers were telling me — and what they *weren't* telling me.
+Not in this dataset.
 
-### 1. Which channel makes more revenue?
+| Channel | Orders | Revenue | Average order value |
+| --- | ---: | ---: | ---: |
+| Online | 237 | **£83,074.70** | **£350.53** |
+| In-store | **263** | £77,860.35 | £296.05 |
 
-| Channel | Revenue | Orders | Average order value | Revenue share |
-| --- | ---: | ---: | ---: | ---: |
-| **Online** | **£83,074.70** | 237 | **£350.53** | **51.62%** |
-| **In-store** | £77,860.35 | **263** | £296.05 | 48.38% |
+In-store had more transactions, but Online generated more revenue. That helped me see why order count alone is not enough to judge performance.
 
-**What I noticed:** Online generated more revenue, even though In-store had more transactions. I learned why it's worth looking at **both order volume and order value**, rather than choosing one KPI and calling it a day.
+### Are Online orders bigger because customers buy more items?
 
-### 2. Are Online orders worth more because people buy more items?
+Actually, In-store orders contained slightly more units on average: **2.11 versus 2.03 Online**.
 
-Surprisingly, **not in this dataset**.
+So I wouldn't assume quantity explains the higher Online order value. I'd want to investigate product mix and item prices before recommending changes to either channel.
 
-- **Online:** about **2.03 units per order**
-- **In-store:** about **2.11 units per order**
+### When did sales change the most?
 
-Despite slightly fewer units per transaction, Online had the higher average order value. That made me curious about **which products were being purchased and their prices**, rather than assuming customers bought more items online.
+**April** was the weakest month at **£14,219.05**. **May** was the strongest at **£20,319.90**, a **42.91% increase** from April.
 
-The data shows the difference; it doesn't by itself establish its cause.
+The monthly growth calculation made that jump easy to spot. But it didn't explain *why* it happened. In a real business, I'd want to look at promotions, stock availability and a longer history.
 
-### 3. Which months were strongest and weakest?
+### Which region and product contributed most?
 
-| Month | Revenue | Month-over-month change |
-| --- | ---: | ---: |
-| Jan | £16,581.60 | — |
-| Feb | £20,026.65 | +20.78% |
-| Mar | £18,787.85 | −6.19% |
-| **Apr** | **£14,219.05** | **−24.32%** |
-| **May** | **£20,319.90** | **+42.91%** |
-| Jun | £16,346.75 | −19.55% |
-| Jul | £17,238.05 | +5.45% |
-| Aug | £17,890.00 | +3.78% |
-| Sep | £19,525.20 | +9.14% |
+**Leeds** had the highest revenue of the four regions, at **£44,122**.
 
-**What stood out:** April was the weakest month, followed by the strongest month, May, with a **42.91% rebound**. In a real retail business, that would be something I'd investigate using promotion, stock, demand, and historical data. I wouldn't call it seasonality or credit a campaign without evidence.
+**Laptop** was the top-revenue product at **£58,045**, or about **36% of total revenue**.
 
-### 4. Which region brought in the most revenue?
+These findings are useful starting points. They also raise further questions about store coverage, profit margins, inventory and reliance on particular products — none of which can be answered using revenue alone.
 
-| Region | Revenue | Orders |
-| --- | ---: | ---: |
-| **Leeds** | **£44,122.00** | 128 |
-| Birmingham | £42,421.85 | 127 |
-| Manchester | £40,467.55 | 128 |
-| London | £33,923.65 | 117 |
+[Read all business questions, findings and follow-up recommendations](docs/BUSINESS_QUESTIONS.md)
 
-**What I noticed:** Leeds led in revenue for the complete dataset. But that doesn't automatically make it the most profitable region. I'd need information such as store numbers, operating costs, and footfall to make that judgment.
+## What I learned
 
-### 5. Which category contributed most?
+Looking back, the biggest change wasn't simply moving from Excel to Power BI. It was the way I started thinking about the analysis.
 
-| Category | Revenue | Orders |
-| --- | ---: | ---: |
-| **Electronics** | **£123,611.25** | 202 |
-| Accessories | £37,323.80 | **298** |
+At first, I was concentrating on how to build PivotTables and charts. Later, I became more interested in what each number meant, how filters affected the answer, and what additional information a business would need before acting on a finding.
 
-**What I noticed:** Electronics generated most revenue even though Accessories appeared in more orders. Another reminder that **frequency isn't the same thing as value**.
+I also learned to separate **what the data shows** from **what might explain it**. A dashboard can reveal a pattern, but it doesn't automatically prove the reason behind it.
 
-### 6. What were the highest-revenue products?
+That's the part of this project I'm most pleased with: it gave me practical experience across the full process, from preparing data to communicating a result clearly.
 
-| Rank | Product | Revenue |
-| --- | --- | ---: |
-| 1 | **Laptop** | **£58,045.00** |
-| 2 | Tablet | £27,568.00 |
-| 3 | Monitor | £27,562.50 |
-| 4 | Docking Station | £11,436.75 |
-| 5 | Speaker | £10,435.75 |
+## Project files
 
-Laptops alone contributed about **36.07%** of total revenue. That raises a useful business question: *How reliant is the retailer on a single product?* Without cost, margin, and inventory information, I can't tell whether that concentration is good or risky.
+The completed 500-transaction Excel and Power BI work, along with screenshots, is available in this repository.
 
-### 7. Is the most frequently ordered product also the biggest revenue generator?
+| Location | What's included |
+| --- | --- |
+| [Excel workbook](excel/Retail_Sales_Analytics_500_Transactions.xlsx) | Raw sales data, analysis sheets, PivotTables, charts and the interactive dashboard |
+| [Power BI report](powerbi/Retail%20Sales%20Analytics%20500.pbix) | Four-page report with Power Query transformations, DAX measures and drill-through |
+| [Screenshots](screenshots/) | Captures from the Excel and Power BI work |
+| [DAX and modeling notes](docs/DAX_MEASURES.md) | Core measures and the Date-table relationship |
+| [Business questions](docs/BUSINESS_QUESTIONS.md) | Findings, interpretations and recommendations |
+| [How to explore the files](docs/HOW_TO_EXPLORE.md) | Instructions for opening and refreshing the reports |
 
-**No.** Monitor appeared in **59 orders**, compared with **39 orders for Laptop**, but Laptop earned considerably more revenue.
+**About the first Excel exercise:** The 12-transaction workbook was part of the learning journey, but its original file is not currently included in this repository. The downloadable Excel workbook above is the later, 500-transaction version.
 
-I learned that rankings change depending on whether we measure **orders, units, revenue, or profit**. The last one can't be calculated from this dataset.
+### To explore the report yourself
 
-### 8. What would I recommend to a business manager?
+Download the Excel workbook and open it in Microsoft Excel. Download the `.pbix` file and open it using Power BI Desktop.
 
-If this were real operational data, I'd suggest a few **follow-up investigations**:
+If Power BI asks for the original Excel source path, update it to the downloaded workbook and refresh. Clear any saved slicer selections to compare your results with the overall figures in this README.
 
-- **Basket value:** Explore Online and In-store product mix and unit prices before considering ways to improve In-store order value.
-- **Monthly changes:** Find out what happened around the April dip and May rebound, using a longer history and business context.
-- **Product concentration:** Check laptop margins, demand, and availability instead of relying on revenue alone.
-- **Regional performance:** Investigate the difference between Leeds and London using footfall, costs, promotions, and store coverage.
-
-These are **questions and hypotheses**, not proven commercial interventions. I think making that distinction is part of doing responsible analysis.
-
----
-
-##  What I learned
-
-Looking back, the biggest difference between my first Excel dashboard and the Power BI report isn't just that the report has more charts.
-
-It's **how I approach the data**.
-
-At first I was focused on learning the mechanics: calculating revenue, making PivotTables, adding slicers. Later, I started asking more questions about the meaning behind the numbers.
-
-Why can a channel with fewer orders generate more revenue? Does a product that appears in lots of orders necessarily contribute more sales? What could explain a sudden monthly change?
-
-I also learned to think about data quality before presentation, use DAX measures rather than repeating manual calculations, and design reports that let someone explore details for themselves.
-
-Most importantly, **finding a pattern and explaining why it happened are two different things**. A dashboard is a good starting point for decision-making, but sometimes the most useful outcome is identifying what additional data is needed.
+[Full setup notes](docs/HOW_TO_EXPLORE.md)
 
 ## Limitations
 
-This is a **learning project using synthetic transactions**, not actual business data.
+This is a learning project with synthetic data, not a report about a real retailer. The dataset covers only nine months and doesn't include costs, profit margins, customer identifiers, marketing activity or inventory records.
 
-The 500-order dataset covers only nine months and doesn't include customer identifiers, profit margins, returns, marketing activity, stock, store costs, or footfall. So I can't reliably calculate retention, profitability, or explain *why* a particular month, product, or region performed as it did.
-
-I have tried to be clear about what the available data supports and where further investigation would be needed.
-
-##  Project files and how to explore them
-
-This repository is intended to bring the complete learning journey together:
-
-\`\`\`text
-retail-sales-excel-powerbi-analytics/
-├── README.md
-├── excel/
-│   ├── Retail_Sales_Analysis_.xlsx
-│   └── Retail_Sales_Analytics_500_Transactions.xlsx
-├── powerbi/
-│   └── Retail_Sales_Analytics_500.pbix
-└── screenshots/
-    ├── excel-foundations.png
-    ├── excel-500-dashboard.png
-    ├── executive-overview.png
-    ├── product-analysis.png
-    ├── sales-drivers.png
-    └── product-details.png
-\`\`\`
-
-**Publication note:** The structure above is the *planned complete repository*. The original Excel workbooks, Power BI file, and screenshots still need to be uploaded; the README is being published first.
-
-When the files are available:
-
-1. Open each workbook in **Microsoft Excel** to explore the source data, PivotTables, dashboards, and slicers.
-2. Open the \`.pbix\` file in **Power BI Desktop**.
-3. If Power BI can't find the source workbook, update the Excel file path in Power Query, then refresh.
-4. Clear any saved slicer selections to compare the **unfiltered** totals with the figures above.
-5. Use the **Product Details** drill-through page to explore selected products.
-
-## Final thoughts
-
-I started this project with **12 orders and a basic spreadsheet**. I ended up working with **500 transactions**, a more detailed Excel dashboard, and a **four-page Power BI report**.
-
-There's still more I want to learn, but this project gave me practical experience taking data from preparation through to analysis and presentation. For me, that was the main goal: **not just learning tools, but learning how to use them to ask better business questions**.
+For that reason, I can describe sales patterns, but I can't make reliable claims about profitability, customer retention or what caused the changes.
 
 ---
 
-**Author:** Kiruthik Raam D V  
-**Focus:** Data Analytics · Business Intelligence · Power BI · Excel  
-**LinkedIn:** [Connect with me](https://www.linkedin.com/in/kiruthik-raam-d-v-41123640b) · **GitHub:** [KiruthikRaamDV](https://github.com/KiruthikRaamDV)
+**Kiruthik Raam D V** · [GitHub](https://github.com/KiruthikRaamDV) · [LinkedIn](https://www.linkedin.com/in/kiruthik-raam-d-v-41123640b)
