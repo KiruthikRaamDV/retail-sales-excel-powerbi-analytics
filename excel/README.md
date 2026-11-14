@@ -1,8 +1,11 @@
-# Excel workbooks
+# Excel analysis
 
-Upload the two original `.xlsx` project files to this folder:
+The [500-transaction Excel workbook](Retail_Sales_Analytics_500_Transactions.xlsx) is available in this folder.
 
-- `Retail_Sales_Analysis_.xlsx` — the first 12-transaction Excel exercise and dashboard.
-- `Retail_Sales_Analytics_500_Transactions.xlsx` — the 500-transaction workbook with source data, PivotTables, analyses and interactive dashboard.
+It contains the transaction data, monthly/regional/channel analyses, PivotTables, PivotCharts, KPIs and an interactive dashboard. The workbook covers January–September 2026 and uses synthetic sales data.
 
-**Tip:** Clear the saved dashboard filters if you want to compare the figures with the full-dataset totals in the project README.
+The project began with an earlier 12-transaction Excel exercise. That first workbook is **not currently uploaded** here; its role in the learning journey is explained in the [main case study](../README.md).
+
+**Viewing tip:** The 500-order dashboard was saved with **In-store** selected. To see the complete dataset, clear the Channel slicer. The overall figures are £160,935.05 in revenue across 500 orders.
+
+See [how to explore the project](../docs/HOW_TO_EXPLORE.md).
