@@ -1,0 +1,11 @@
+# Local editor and Microsoft Office temporary files
+~$*
+*.tmp
+*.bak
+*.lock
+.DS_Store
+Thumbs.db
+
+# Power BI Desktop local caches and autosave directories
+*.pbix.autorecovery
+*.pbi/
