@@ -1,10 +1,10 @@
 
 
-- `excel-foundations.png` — first 12-row Excel dashboard.
-- `excel-500-dashboard.png` — expanded 500-transaction Excel dashboard.
-- `executive-overview.png` — Power BI overview page.
-- `product-analysis.png` — product and category page.
-- `sales-drivers.png` — monthly/regional/channel drivers.
-- `product-details.png` — drill-through page.
+-  — first 12-row Excel dashboard.
+- — expanded 500-transaction Excel dashboard.
+-  — Power BI overview page.
+-  — product and category page.
+-  — monthly/regional/channel drivers.
+-  — drill-through page.
 
 
